@@ -1,0 +1,61 @@
+Recursive Flood Fill
+Flood fill is an algorithm that determines the area connected to a given cell in a multi-dimensional array. It is used in the "bucket" fill tool of paint programs to fill connected, similarly-colored areas with a different color. Suppose you have a colorful image that can be represented as a 2D array of pixels. Each pixel in this 2D array has a color. Your task is to change the color of some area that has a specific color to a new color.
+
+The traditional flood-fill algorithm takes three parameters: a start cell, a target color, and a replacement color. The algorithm looks for all cells in the array that are connected to the start cell by a path of the target color and changes them to the replacement color. Depending on whether we consider cells touching at the corners connected or not, we have two variations: eight-way and four-way respectively. In this project, we will use recursive flood fill with 4 directions (left, right, above, and below – not diagonal). Note: No credit is given for the solution without using recursive method.
+
+Several text files (data1.txt, data2.txt, and data3.txt) contain two integers followed by rows and columns filled with different characters. Study the format of the text file as shown below:
+
+9 12
+..........00
+...0....0000
+...000000000
+0000.....000
+............
+..#########.
+..#...#####.
+......#####.
+...00000....
+There are two numbers in the first row: N, M; where N represents N lines and each line contains M characters. For this project, you are required to create a program named FloodFill.java and implement the following 4 methods:
+
+1. public char[][] build2DArray(String filename). It reads data from the file, builds and returns a 2-D char array. It returns null if an exception is raised.
+
+2. public void fill(char[][] arr, int row, int col, char replacement). The parameters of row and col represent the start cell position. This method replaces the start cell character with “replacement” character, then recurs up, down, left, and right, (NOT diagonally) and replaces similar character with the “replacement” character.
+
+For example, for the following 2-D array:
+
+..........00
+...0....0000
+...000000000
+0000.....000
+............
+..#########.
+..#...#####.
+......#####.
+...00000....
+Calling fill(array, 1, 2, ‘*’) should alter the array as follows:
+
+**********00 
+***0****0000 
+***000000000 
+0000.....000 
+............ 
+..#########. 
+..#...#####. 
+......#####. 
+...00000....
+3. public void print(char[][] arr). It prints the 2-D char array in the format as shown below:
+
+9 12
+..........00
+...0....0000
+...000000000
+0000.....000
+............
+..#########.
+..#...#####.
+......#####.
+...00000....
+4. public void save(char[][] arr, String filename). It saves the 2-D array to the file (specified as the filename). The first line should be two numbers: N and M, where N is the number of rows of the 2-D arr, and M is the number of elements in each row. It is followed by N lines and each line represents the characters in each row. Please refer to the data file for the format requirement.
+
+You may want to download sample data files to test your implementations.
+
